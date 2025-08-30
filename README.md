@@ -1,4 +1,4 @@
-# AZ-700 Azure Networking Labs 🌐
+# AZ-700 Azure Networking Labs
 
 [![Azure](https://img.shields.io/badge/Microsoft-Azure-0078d4?style=flat&logo=microsoft-azure)](https://azure.microsoft.com)
 [![PowerShell](https://img.shields.io/badge/PowerShell-7.0+-blue?style=flat&logo=powershell)](https://github.com/PowerShell/PowerShell)
@@ -6,13 +6,13 @@
 
 A comprehensive collection of hands-on lab exercises for mastering Azure networking concepts, designed specifically for the **AZ-700: Designing and Implementing Microsoft Azure Networking Solutions** certification exam.
 
-## 🎯 Overview
+## Overview
 
 This repository contains **15 structured labs** covering all major Azure networking services and concepts. Each lab includes clean PowerShell deployment scripts and detailed documentation to accelerate your learning journey.
 
-## 📚 Lab Catalog
+## Lab Catalog
 
-### 🔄 Load Balancing & Traffic Management
+### Load Balancing & Traffic Management
 | Lab | Service | Focus Area |
 |-----|---------|------------|
 | [01](labs/01-load-balancer/) | **Azure Load Balancer** | Availability zones, backend pools |
@@ -20,7 +20,7 @@ This repository contains **15 structured labs** covering all major Azure network
 | [03](labs/03-application-gateway/) | **Application Gateway** | Path-based routing, SSL termination |
 | [04](labs/04-front-door/) | **Azure Front Door** | Global CDN, edge locations |
 
-### 🔒 Network Security
+### Network Security
 | Lab | Service | Focus Area |
 |-----|---------|------------|
 | [05](labs/05-nsg/) | **Network Security Groups** | Traffic filtering, security rules |
@@ -28,7 +28,7 @@ This repository contains **15 structured labs** covering all major Azure network
 | [07](labs/07-azure-firewall/) | **Azure Firewall** | Network/application rules |
 | [08](labs/08-waf/) | **Web Application Firewall** | OWASP protection, attack prevention |
 
-### 🌐 Connectivity & Routing
+### Connectivity & Routing
 | Lab | Service | Focus Area |
 |-----|---------|------------|
 | [09](labs/09-service-endpoints/) | **Service Endpoints** | Private Azure service access |
@@ -39,7 +39,7 @@ This repository contains **15 structured labs** covering all major Azure network
 | [14](labs/14-vpn-p2s/) | **Point-to-Site VPN** | Remote access connectivity |
 | [15](labs/15-vwan/) | **Virtual WAN** | Global network architecture |
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 - **Azure Subscription** with sufficient quotas
@@ -72,16 +72,8 @@ Get-Content README.md
 # 6. Clean up resources when done
 ```
 
-## 💡 Lab Features
 
-- **🧹 Clean Code**: Comment-free scripts focused on execution
-- **📖 Rich Documentation**: Comprehensive README for each lab
-- **💰 Cost Optimized**: B-series VMs and Free/Basic service tiers
-- **🔄 Consistent**: Standardized authentication and naming
-- **🎓 Educational**: Real-world scenarios and best practices
-- **⚡ Fast Deployment**: Efficient infrastructure provisioning
-
-## 🔐 Authentication
+## Authentication
 
 All labs use consistent credentials for simplicity:
 - **Username**: kodekloud
@@ -89,19 +81,6 @@ All labs use consistent credentials for simplicity:
 
 > ⚠️ **Note**: These are lab credentials only. Use strong, unique passwords in production.
 
-## 📋 Learning Path
-
-### Beginner (Fundamentals)
-1. **NSG** → **Load Balancer** → **Service Endpoints**
-
-### Intermediate (Advanced Services)
-2. **Application Gateway** → **Bastion** → **Private DNS**
-
-### Advanced (Complex Scenarios)
-3. **Front Door** → **Azure Firewall** → **Virtual WAN**
-
-### Expert (Security & Integration)
-4. **WAF** → **UDR/NVA** → **VPN** → **Peering**
 
 ## 🛠️ Troubleshooting
 
@@ -116,33 +95,26 @@ All labs use consistent credentials for simplicity:
 - [AZ-700 Exam Guide](https://docs.microsoft.com/learn/certifications/exams/az-700)
 - [Azure PowerShell Reference](https://docs.microsoft.com/powershell/azure/)
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Please:
 1. Fork the repository
 2. Create a feature branch
 3. Submit a pull request
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🎖️ Certification Journey
+## Certification Journey
 
 These labs are designed to prepare you for the **AZ-700** exam objectives:
 
-- ✅ **Design, implement, and manage hybrid networking** (25–30%)
-- ✅ **Design and implement core networking infrastructure** (20–25%)  
-- ✅ **Design and implement routing** (25–30%)
-- ✅ **Secure and monitor networks** (15–20%)
+- **Design, implement, and manage hybrid networking** (25–30%)
+- **Design and implement core networking infrastructure** (20–25%)  
+- **Design and implement routing** (25–30%)
+- **Secure and monitor networks** (15–20%)
 
-## ⭐ Acknowledgments
-
-Created for the Azure networking community to accelerate learning and certification success.
-
----
-
-**Happy Learning!** 🎓 | **Good Luck with AZ-700!** 🍀
 
 ---
 
