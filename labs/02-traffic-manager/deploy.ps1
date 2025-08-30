@@ -103,22 +103,4 @@ foreach ($region in $regions) {
     Write-Host "✓ Deployed: $appName in $($region.display)" -ForegroundColor Green
 }
 
-Write-Host "`nDeployment complete!" -ForegroundColor Green
-Write-Host "`nApp Service URLs:" -ForegroundColor Yellow
-
-for ($i = 0; $i -lt $regions.Count; $i++) {
-    $region = $regions[$i]
-    $url = $appUrls[$i]
-    Write-Host "  $($region.display): $url" -ForegroundColor Cyan
-}
-
-Write-Host "`nNext steps for Traffic Manager:" -ForegroundColor Yellow
-Write-Host "1. Create a Traffic Manager profile with Geographic routing method" -ForegroundColor White
-Write-Host "2. Add these App Services as endpoints:" -ForegroundColor White
-Write-Host "   - East US endpoint for North America traffic" -ForegroundColor White
-Write-Host "   - West Europe endpoint for Europe traffic" -ForegroundColor White
-Write-Host "   - Southeast Asia endpoint for Asia traffic" -ForegroundColor White
-Write-Host "3. Configure geographic mappings for each endpoint" -ForegroundColor White
-Write-Host "4. Test from different locations using online tools or VPN" -ForegroundColor White
-
-Write-Host "`nNote: App Services are in Free Tier (F1). Custom domains require Basic tier or higher." -ForegroundColor Gray
+Write-Host "Deployment completed." -ForegroundColor Green

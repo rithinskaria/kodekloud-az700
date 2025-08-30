@@ -81,29 +81,4 @@ foreach ($vm in $vmNames) {
     Write-Host "✓ VM created: $($vm.name)" -ForegroundColor Green
 }
 
-Write-Host "`nAzure Load Balancer demo infrastructure deployment complete! ⚖️" -ForegroundColor Green
-
-Write-Host "`nCreated Resources:" -ForegroundColor Yellow
-Write-Host "Resource Group: $resourceGroup" -ForegroundColor White
-Write-Host "Virtual Network: $vnetName ($vnetAddressSpace)" -ForegroundColor White
-Write-Host "Subnet: $subnetName ($subnetPrefix)" -ForegroundColor White
-foreach ($vm in $vmNames) {
-    Write-Host "VM: $($vm.name) (Zone $($vm.zone), Standard_B1ms)" -ForegroundColor White
-}
-
-Write-Host "`nVM Access Information:" -ForegroundColor Yellow
-Write-Host "Username: $username" -ForegroundColor White
-Write-Host "Password: $passwordPlain" -ForegroundColor White
-
-Write-Host "`nNext Steps - Create Load Balancer:" -ForegroundColor Green
-Write-Host "1. Create Azure Load Balancer (Standard SKU)" -ForegroundColor White
-Write-Host "2. Configure backend pool with all 3 VMs" -ForegroundColor White
-Write-Host "3. Create health probe (HTTP port 80, path /)" -ForegroundColor White
-Write-Host "4. Create load balancing rule (Frontend port 80 → Backend port 80)" -ForegroundColor White
-Write-Host "5. Test load balancing by accessing the frontend IP" -ForegroundColor White
-
-Write-Host "`nExpected Result:" -ForegroundColor Green
-Write-Host "Each refresh should show different colored pages with different hostnames" -ForegroundColor White
-Write-Host "demonstrating traffic distribution across availability zones." -ForegroundColor White
-
-Write-Host "`nInfrastructure ready for Load Balancer configuration!" -ForegroundColor Green
+Write-Host "Deployment completed." -ForegroundColor Green

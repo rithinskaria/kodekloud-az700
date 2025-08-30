@@ -435,36 +435,4 @@ foreach ($region in $regions) {
     $appUrls += "https://$appName.azurewebsites.net"
     Write-Host "✓ Deployed: $appName in $($region.display)" -ForegroundColor Green
 }
-Write-Host "`nDeployment complete! 🌍" -ForegroundColor Green
-Write-Host "`nApp Service URLs for Front Door:" -ForegroundColor Yellow
-for ($i = 0; $i -lt $regions.Count; $i++) {
-    $region = $regions[$i]
-    $url = $appUrls[$i]
-    Write-Host ("  $($region.flag) $($region.display): $url") -ForegroundColor Cyan
-    Write-Host ("    Specialty: $($region.specialty)") -ForegroundColor Gray
-    Write-Host ("    All paths available with regional content") -ForegroundColor Gray
-}
-Write-Host "`nNext Steps for Azure Front Door:" -ForegroundColor Yellow
-Write-Host "1. Create Azure Front Door profile" -ForegroundColor White
-Write-Host "2. Add these App Services as backend pools:" -ForegroundColor White
-Write-Host "   - East US backend (North America traffic)" -ForegroundColor White
-Write-Host "   - West Europe backend (Europe traffic)" -ForegroundColor White  
-Write-Host "   - Southeast Asia backend (Asia traffic)" -ForegroundColor White
-Write-Host "   - Australia East backend (Oceania traffic)" -ForegroundColor White
-Write-Host "3. Configure geographic routing (not path-based):" -ForegroundColor White
-Write-Host "   - Route users to nearest healthy backend" -ForegroundColor White
-Write-Host "   - All backends serve identical paths with regional content" -ForegroundColor White
-Write-Host "4. Set up health probes pointing to /health.html" -ForegroundColor White
-Write-Host "5. Configure failover between regions" -ForegroundColor White
-Write-Host "6. Test from different global locations" -ForegroundColor White
-Write-Host "`nTesting URLs (same paths, different regional content):" -ForegroundColor Yellow
-Write-Host "- http://<frontdoor-url>/ (routed to nearest region)" -ForegroundColor White
-Write-Host "- http://<frontdoor-url>/api/users (regional API content)" -ForegroundColor White
-Write-Host "- http://<frontdoor-url>/api/orders (regional API content)" -ForegroundColor White
-Write-Host "- http://<frontdoor-url>/images/gallery (regional image content)" -ForegroundColor White
-Write-Host "- http://<frontdoor-url>/images/uploads (regional image content)" -ForegroundColor White
-Write-Host "- http://<frontdoor-url>/videos/stream (regional video content)" -ForegroundColor White
-Write-Host "- http://<frontdoor-url>/videos/live (regional video content)" -ForegroundColor White
-Write-Host "- http://<frontdoor-url>/docs/help (regional documentation)" -ForegroundColor White
-Write-Host "- http://<frontdoor-url>/docs/faq (regional documentation)" -ForegroundColor White
-Write-Host "`nNote: All regions serve all paths with localized content and regional specialization." -ForegroundColor Gray
+Write-Host "Deployment completed." -ForegroundColor Green

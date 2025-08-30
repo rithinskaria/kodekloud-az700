@@ -41,42 +41,4 @@ for ($i = 1; $i -le 3; $i++) {
     New-AzVM -ResourceGroupName $resourceGroup -Location $location -VM $vmConfig | Out-Null
     Write-Host "✓ VM created: $vmName (Public IP: $($publicIp.IpAddress))" -ForegroundColor Green
 }
-Write-Host "`nNSG Lab infrastructure deployment complete! 🛡️" -ForegroundColor Green
-Write-Host "`nCreated Resources:" -ForegroundColor Yellow
-Write-Host "Resource Group: $resourceGroup" -ForegroundColor White
-Write-Host "Virtual Network: $vnetName (10.0.0.0/16)" -ForegroundColor White
-Write-Host "Subnet: $subnetName (10.0.1.0/24)" -ForegroundColor White
-Write-Host "VMs: 3 x $vmSize Ubuntu 22.04 LTS" -ForegroundColor White
-Write-Host "`nVirtual Machines:" -ForegroundColor Yellow
-for ($i = 1; $i -le 3; $i++) {
-    $vmName = "$vmNamePrefix-$i"
-    $publicIpName = "$vmName-pip"
-    $publicIp = Get-AzPublicIpAddress -ResourceGroupName $resourceGroup -Name $publicIpName
-    Write-Host "  $vmName - Public IP: $($publicIp.IpAddress)" -ForegroundColor Cyan
-}
-Write-Host "`nLogin Credentials:" -ForegroundColor Yellow
-Write-Host "Username: $adminUsername" -ForegroundColor White
-Write-Host "Password: $adminPassword" -ForegroundColor White
-Write-Host "`nNext Steps for NSG Demonstration:" -ForegroundColor Yellow
-Write-Host "1. Test connectivity to VMs (should FAIL - no NSG rules)" -ForegroundColor Red
-Write-Host "   ssh $adminUsername@<public-ip>" -ForegroundColor Gray
-Write-Host "2. Create Network Security Groups:" -ForegroundColor White
-Write-Host "   - Subnet-level NSG" -ForegroundColor Gray
-Write-Host "   - NIC-level NSG" -ForegroundColor Gray
-Write-Host "3. Configure NSG rules:" -ForegroundColor White
-Write-Host "   - Allow SSH (port 22)" -ForegroundColor Gray
-Write-Host "   - Allow HTTP (port 80)" -ForegroundColor Gray
-Write-Host "   - Deny specific traffic" -ForegroundColor Gray
-Write-Host "4. Associate NSGs with subnet/NICs" -ForegroundColor White
-Write-Host "5. Test traffic flow and rule precedence" -ForegroundColor White
-Write-Host "6. Monitor NSG flow logs" -ForegroundColor White
-Write-Host "`nImportant Notes:" -ForegroundColor Red
-Write-Host "• NO NSGs are currently assigned" -ForegroundColor White
-Write-Host "• All traffic is currently BLOCKED by default Azure rules" -ForegroundColor White
-Write-Host "• VMs cannot be accessed until NSG rules are configured" -ForegroundColor White
-Write-Host "• Use this setup to demonstrate NSG rule effects" -ForegroundColor White
-Write-Host "`nNSG Testing Commands:" -ForegroundColor Yellow
-Write-Host "# Test SSH connectivity (should fail initially)" -ForegroundColor Gray
-Write-Host "ssh $adminUsername@<vm-public-ip>" -ForegroundColor Gray
-Write-Host "`n# Test HTTP connectivity (install web server first)" -ForegroundColor Gray
-Write-Host "curl http://<vm-public-ip>" -ForegroundColor Gray
+Write-Host "Deployment completed." -ForegroundColor Green

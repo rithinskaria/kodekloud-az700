@@ -181,25 +181,4 @@ foreach ($group in $vmGroups) {
         Write-Host ("  ✓ Created " + $vm.name + " (" + $privateIp + ")") -ForegroundColor Green
     }
 }
-Write-Host "`nDeployment complete! 🎉" -ForegroundColor Green
-Write-Host "`nBackend Pool Configuration:" -ForegroundColor Yellow
-foreach ($group in $vmGroups) {
-    Write-Host ("  " + $group.groupName + " (" + $group.path + "):") -ForegroundColor Cyan
-    $groupVms = $allVmDetails | Where-Object { $_.group -eq $group.groupName }
-    foreach ($vm in $groupVms) {
-        Write-Host ("    " + $vm.name + ": " + $vm.ip + " (subnet: " + $vm.subnet + ")") -ForegroundColor White
-    }
-}
-Write-Host "`nNext Steps for Application Gateway:" -ForegroundColor Yellow
-Write-Host "1. Create Application Gateway with these backend pools:" -ForegroundColor White
-Write-Host "   - API Backend Pool: Add API VMs for /api/* routing" -ForegroundColor White
-Write-Host "   - Images Backend Pool: Add Images VMs for /images/* routing" -ForegroundColor White
-Write-Host "2. Configure Path-based routing rules:" -ForegroundColor White
-Write-Host "   - /api/* → API Backend Pool" -ForegroundColor White
-Write-Host "   - /images/* → Images Backend Pool" -ForegroundColor White
-Write-Host "   - /* (default) → API Backend Pool" -ForegroundColor White
-Write-Host "3. Test the routing with:" -ForegroundColor White
-Write-Host "   - http://<gateway-ip>/ → API backend" -ForegroundColor White
-Write-Host "   - http://<gateway-ip>/api → API backend" -ForegroundColor White
-Write-Host "   - http://<gateway-ip>/images → Images backend" -ForegroundColor White
-Write-Host "`nNote: VMs use cost-effective B1s instances and are private-only." -ForegroundColor Gray
+Write-Host "Deployment completed." -ForegroundColor Green

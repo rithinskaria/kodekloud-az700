@@ -82,7 +82,4 @@ New-AzVM -ResourceGroupName $resourceGroup -Location $locationVnet1 -VM $vm1Cfg 
 New-AzVM -ResourceGroupName $resourceGroup -Location $locationVnet2 -VM $vm2Cfg | Out-Null
 $priv1 = (Get-AzNetworkInterface -Name $nic1Name -ResourceGroupName $resourceGroup).IpConfigurations[0].PrivateIpAddress
 $priv2 = (Get-AzNetworkInterface -Name $nic2Name -ResourceGroupName $resourceGroup).IpConfigurations[0].PrivateIpAddress
-Write-Host "Deployment complete." -ForegroundColor Green
-Write-Host "VNet1 VM Private IP (Internal Site 1): $priv1" -ForegroundColor Yellow
-Write-Host "VNet2 VM Private IP (Internal Site 2): $priv2" -ForegroundColor Yellow
-Write-Host "Next: In Portal create Virtual WAN, hub, add both VNets as connections, then test curl http://$priv2 from VM1 (and vice versa) via hub routing." -ForegroundColor Cyan
+Write-Host "Deployment completed." -ForegroundColor Green

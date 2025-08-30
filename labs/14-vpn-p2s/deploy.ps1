@@ -56,6 +56,4 @@ Write-Host "Creating hub <-> spoke peering (no gateway transit)" -ForegroundColo
 Add-AzVirtualNetworkPeering -Name "peer-hub-to-spoke"   -VirtualNetwork $hubVnet  -RemoteVirtualNetworkId $spokeVnet.Id -AllowForwardedTraffic | Out-Null
 Add-AzVirtualNetworkPeering -Name "peer-spoke-to-hub"   -VirtualNetwork $spokeVnet -RemoteVirtualNetworkId $hubVnet.Id   -AllowForwardedTraffic | Out-Null
 $privateIp = (Get-AzNetworkInterface -Name $nicName -ResourceGroupName $resourceGroup).IpConfigurations[0].PrivateIpAddress
-Write-Host "Deployment complete." -ForegroundColor Green
-Write-Host "Spoke VM Private IP: $privateIp" -ForegroundColor Yellow
-Write-Host "Next steps: Add GatewaySubnet to hub, deploy VPN gateway, enable gateway transit (hub side) then establish P2S to reach the internal site." -ForegroundColor Cyan
+Write-Host "Deployment completed." -ForegroundColor Green

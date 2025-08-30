@@ -135,34 +135,4 @@ Write-Host "✓ Deployed to $appService2Name" -ForegroundColor Green
 Remove-Item $primaryHtmlFile, $secondaryHtmlFile, $primaryZipFile, $secondaryZipFile -Force
 $appService1Url = "https://$appService1Name.azurewebsites.net"
 $appService2Url = "https://$appService2Name.azurewebsites.net"
-Write-Host "`nXSS Vulnerable Web Apps Deployed Successfully! 🎯" -ForegroundColor Green
-Write-Host "`nCreated Resources:" -ForegroundColor Yellow
-Write-Host "Resource Group: $resourceGroup" -ForegroundColor White
-Write-Host "App Service Plan 1: $appServicePlan1Name ($primaryLocation)" -ForegroundColor White
-Write-Host "App Service Plan 2: $appServicePlan2Name ($secondaryLocation)" -ForegroundColor White
-Write-Host "App Service 1: $appService1Name ($primaryLocation)" -ForegroundColor White
-Write-Host "App Service 2: $appService2Name ($secondaryLocation)" -ForegroundColor White
-Write-Host "`nApp Service URLs (VULNERABLE):" -ForegroundColor Red
-Write-Host "Primary (East US): $appService1Url" -ForegroundColor Cyan
-Write-Host "Secondary (West Europe): $appService2Url" -ForegroundColor Cyan
-Write-Host "`nXSS Testing Instructions:" -ForegroundColor Green
-Write-Host "1. Visit either App Service URL above" -ForegroundColor White
-Write-Host "2. Try these XSS payloads in the form:" -ForegroundColor White
-Write-Host "   • <script>alert('XSS')</script>" -ForegroundColor Gray
-Write-Host "   • <img src=x onerror=alert('XSS')>" -ForegroundColor Gray
-Write-Host "   • <svg onload=alert('XSS')>" -ForegroundColor Gray
-Write-Host "3. Click Submit - you should see alert boxes (XSS working)" -ForegroundColor White
-Write-Host "4. After you set up Front Door + WAF, same attacks should be blocked" -ForegroundColor White
-Write-Host "`nNext Steps - Create Front Door + WAF:" -ForegroundColor Green
-Write-Host "1. Go to Azure Portal > Create Resource > Front Door" -ForegroundColor White
-Write-Host "2. Create Front Door profile (Standard tier for WAF support)" -ForegroundColor White
-Write-Host "3. Add both App Services as origins:" -ForegroundColor White
-Write-Host "   • $appService1Name.azurewebsites.net" -ForegroundColor Gray
-Write-Host "   • $appService2Name.azurewebsites.net" -ForegroundColor Gray
-Write-Host "4. Create WAF Policy with managed rules" -ForegroundColor White
-Write-Host "5. Associate WAF policy with Front Door endpoint" -ForegroundColor White
-Write-Host "6. Test same XSS attacks via Front Door URL - should get HTTP 403" -ForegroundColor White
-Write-Host "`nWhat to Expect:" -ForegroundColor Yellow
-Write-Host "Before WAF: XSS attacks work (alert boxes appear)" -ForegroundColor Red
-Write-Host "After WAF: XSS attacks blocked (HTTP 403 Forbidden)" -ForegroundColor Green
-Write-Host "`nNote: Apps are ready and vulnerable. Create Front Door + WAF to protect them." -ForegroundColor Gray
+Write-Host "Deployment completed." -ForegroundColor Green

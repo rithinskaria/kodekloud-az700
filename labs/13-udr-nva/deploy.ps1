@@ -99,5 +99,4 @@ New-FullPeering -fromVnet $vnet1 -toVnet $vnet3
 New-FullPeering -fromVnet $vnet3 -toVnet $vnet1
 New-FullPeering -fromVnet $vnet2 -toVnet $vnet3
 New-FullPeering -fromVnet $vnet3 -toVnet $vnet2
-Write-Host "Deployment complete." -ForegroundColor Green
-Write-Host "NVA Public IP:" ((Get-AzPublicIpAddress -Name $ip3Name -ResourceGroupName $resourceGroup).IpAddress)
+Write-Host "Deployment completed." -ForegroundColor Green
